@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DirFileStats.Business
 {
-    class FileStats : BaseStats
+    public class FileStats : BaseStats
     {
         private string fileExtension;
         private long fileSize;

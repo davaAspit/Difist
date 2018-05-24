@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DirFileStats.Business
 {
-    abstract class BaseStats
+    public abstract class BaseStats
     {
         private string name;
 

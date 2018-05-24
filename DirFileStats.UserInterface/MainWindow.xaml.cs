@@ -14,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
-
+using DirFileStats.Business;
 namespace DirFileStats.UserInterface
 {
     /// <summary>

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DirFileStats.Business
 {
-    class DirectoryStats : BaseStats
+    public class DirectoryStats : BaseStats
     {
         private int numberOfFiles;
 
