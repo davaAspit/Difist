@@ -46,11 +46,16 @@ namespace DirFileStats.UserInterface
             {
                 // TODO:
                 // Show the path (found in dlg.FileName) in the correct textbox so the user can see what was chosen
-
+                tbxFilePath.Text = dlg.FileName;
                 FileInfo fileInfo = new FileInfo(dlg.FileName);
 
                 // TODO:
                 // Use the fileInfo to create a FileStats object and show the relevant data for the user
+                FileStats fileStats = StatsCreator.CreateFileStats(fileInfo);
+                lblName.Content = fileStats.Name;
+                lblFileSize.Content = fileStats.FileSize;
+                lblFileExtension.Content = fileStats.FileExtension;
+                
             }
 
 
@@ -75,6 +80,7 @@ namespace DirFileStats.UserInterface
             {
                 // TODO:
                 // Show the path (found in dlg.FileName) in the correct textbox so the user can see what was chosen
+                tbxDirPath.Text = dlg.FileName;
 
                 DirectoryInfo dirInfo = new DirectoryInfo(dlg.FileName);
 
