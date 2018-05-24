@@ -5,8 +5,29 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DirFileStats.UserInterface"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Difist - the only statistic app you will ever need" Height="450" Width="800">
     <Grid>
+        <TextBox x:Name="tbxFilePath" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="194,33,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="509"/>
+        <Button x:Name="btnChooseFile" Content="Choose file" HorizontalAlignment="Left" Margin="32,33,0,0" VerticalAlignment="Top" Width="157" Height="23" Click="btnChooseFile_Click"/>
+
+        <TextBox x:Name="tbxDirPath" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="194,61,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="509"/>
+        <Button x:Name="btnChooseDir" Content="Choose directory" HorizontalAlignment="Left" Margin="32,61,0,0" VerticalAlignment="Top" Width="157" Height="23" Click="btnChooseDir_Click"/>
         
+        <GroupBox Header="The Statistics" HorizontalAlignment="Left" Height="267" Margin="32,119,0,0" VerticalAlignment="Top" Width="509">
+            <Grid>
+                <Label Content="Type:" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top"/>
+                <Label Content="Name:" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top"/>
+                <Label Content="File size:" HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top"/>
+                <Label Content="File extension:" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
+                <Label Content="Number of files in directory:" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblType" Content="n/a" HorizontalAlignment="Left" Margin="173,27,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblName" Content="n/a" HorizontalAlignment="Left" Margin="173,58,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblFileSize" Content="n/a" HorizontalAlignment="Left" Margin="173,89,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblFileExtension" Content="n/a" HorizontalAlignment="Left" Margin="173,120,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblNumberOfFiles" Content="n/a" HorizontalAlignment="Left" Margin="173,151,0,0" VerticalAlignment="Top"/>
+            </Grid>
+        </GroupBox>
+        
+
     </Grid>
 </Window>

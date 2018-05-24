@@ -259,3 +259,11 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/DirFileStats.Business/StatsContainer.cs
+/DirFileStats.Business/Properties/AssemblyInfo.cs
+/DirFileStats.Business/Properties
+/DirFileStats.Business/FileStats.cs
+/DirFileStats.Business/DirFileStats.Business.csproj
+/DirFileStats.Business/DirectoryStats.cs
+/DirFileStats.Business/BaseStats.cs
+/DirFileStats.Business
