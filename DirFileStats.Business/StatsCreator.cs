@@ -12,7 +12,8 @@ namespace DirFileStats.Business
         {
             //TODO: Extract the relevant info from the parameter and create a FileStats object
             //Extra comment
-            throw new NotImplementedException();
+            Console.Write("dwadwa");
+            throw new NotImplementedException();            
         }
 
         public static DirectoryStats CreateDirectoryStats(System.IO.DirectoryInfo directoryInfo)
