@@ -10,10 +10,13 @@ namespace DirFileStats.Business
     {
         public static FileStats CreateFileStats(System.IO.FileInfo fileInfo)
         {
-            //TODO: Extract the relevant info from the parameter and create a FileStats object
-            //Extra comment
-            Console.Write("dwadwa");
-            throw new NotImplementedException();            
+            //TODO: Extract the relevant info from the parameter and create a FileStats object 
+            string fileExtension = fileInfo.Extension;
+            string fileName = fileInfo.Name;
+            long fileSize = fileInfo.Length;
+
+            FileStats fileStats = new FileStats(fileName, fileSize, fileExtension);
+            return fileStats;     
         }
 
         public static DirectoryStats CreateDirectoryStats(System.IO.DirectoryInfo directoryInfo)
