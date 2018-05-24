@@ -10,7 +10,6 @@ namespace DirFileStats.Business
     {
         public static FileStats CreateFileStats(System.IO.FileInfo fileInfo)
         {
-            //TODO: Extract the relevant info from the parameter and create a FileStats object 
             string fileExtension = fileInfo.Extension;
             string fileName = fileInfo.Name;
             long fileSize = fileInfo.Length;
@@ -21,8 +20,12 @@ namespace DirFileStats.Business
 
         public static DirectoryStats CreateDirectoryStats(System.IO.DirectoryInfo directoryInfo)
         {
-            //TODO: Extract the relevant info from the parameter and create a DirectoryStats object
-            throw new NotImplementedException();
+            string directoryName = directoryInfo.Name;
+            var directoryFiles = directoryInfo.EnumerateFiles();
+            directoryFiles.Count();
+
+            DirectoryStats directoryStats = new DirectoryStats(directoryName, directoryFiles.Count());
+            return directoryStats;
         }
     }
 }
