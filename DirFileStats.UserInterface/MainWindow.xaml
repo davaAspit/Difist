@@ -13,7 +13,7 @@
         <TextBox x:Name="tbxDirPath" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="194,61,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="509"/>
         <Button x:Name="btnChooseDir" Content="Choose directory" HorizontalAlignment="Left" Margin="32,61,0,0" VerticalAlignment="Top" Width="157" Height="23" Click="btnChooseDir_Click"/>
         
-        <GroupBox Header="The Statistics" HorizontalAlignment="Left" Height="267" Margin="32,119,0,0" VerticalAlignment="Top" Width="509">
+        <GroupBox Header="The Statistics" HorizontalAlignment="Left" Height="267" Margin="32,119,0,0" VerticalAlignment="Top" Width="509" Foreground="#FF9B9B9B">
             <Grid>
                 <Label Content="Type:" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top"/>
                 <Label Content="Name:" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top"/>
