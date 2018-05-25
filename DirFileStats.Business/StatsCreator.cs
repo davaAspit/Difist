@@ -15,15 +15,22 @@ namespace DirFileStats.Business
             long fileSize = fileInfo.Length;
 
             FileStats fileStats = new FileStats(fileName, fileSize, fileExtension);
-            return fileStats;     
+            return fileStats;
         }
 
-        public static DirectoryStats CreateDirectoryStats(System.IO.DirectoryInfo directoryInfo)
+        public static DirectoryStats CreateDirectoryStats(System.IO.DirectoryInfo directoryInfo, bool checkAllSubFolders= false)
         {
             string directoryName = directoryInfo.Name;
             var directoryFiles = directoryInfo.EnumerateFiles();
-            directoryFiles.Count();
 
+            if (checkAllSubFolders)
+            {
+                string[] files = System.IO.Directory.GetFiles(directoryName, "*", System.IO.SearchOption.AllDirectories);
+                int numberOfFiles = files.Count();
+                DirectoryStats allFiles = new DirectoryStats(directoryName, numberOfFiles);
+                return allFiles;
+            }
+            directoryFiles.Count();
             DirectoryStats directoryStats = new DirectoryStats(directoryName, directoryFiles.Count());
             return directoryStats;
         }
