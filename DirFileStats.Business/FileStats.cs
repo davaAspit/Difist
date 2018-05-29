@@ -14,12 +14,12 @@ namespace DirFileStats.Business
         private DateTime lastModified;
         private DateTime fileCreated;
 
-        public FileStats(string name, long fileSize, string fileExtension, DateTime lastModfied, DateTime fileCreate) : base(name)
+        public FileStats(string name, long fileSize, string fileExtension, DateTime lastModified, DateTime fileCreated) : base(name)
         {
             FileSize = fileSize;
             FileExtension = fileExtension;
-            lastModfied = LastModified;
-            fileCreate = FileCreated;
+            LastModified = lastModified;
+            FileCreated = fileCreated;
         }
 
         public string FileExtension { get => fileExtension; set => fileExtension = value; }

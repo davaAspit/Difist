@@ -53,8 +53,52 @@ namespace DirFileStats.UserInterface
                 // Use the fileInfo to create a FileStats object and show the relevant data for the user
                 FileStats fileStats = StatsCreator.CreateFileStats(fileInfo);
                 lblName.Content = fileStats.Name;
-                lblFileSize.Content = fileStats.FileSize;
+                lblType.Content = "File";
+                double size = 0;
+                size = fileStats.FileSize; /// 1024;
+
+                //string lastModified = Convert.ToString(fileStats.LastModified);
+                //string FileCreated = Convert.ToString(fileStats.FileCreated);
+
+                lblCreationTime.Content = fileStats.FileCreated;
+                lblLastModified.Content = fileStats.LastModified;
+
+                const long kb = 1024;
+                const long mb = 1048576;
+                const long gb = 1073741824;
+
+                if (size < kb)
+                {
+                    lblFileSize.Content = size;
+                    lblDataSize.Content = "Byte";
+                }
+                else if (size < mb)
+                {
+                    size = size / kb;
+                     lblFileSize.Content = size.ToString("N2");
+                    lblDataSize.Content = "KBs";
+                }
+                else if (size < gb)
+                {
+                    size = size / mb;
+                    lblFileSize.Content = size.ToString("N");
+                    lblDataSize.Content = "MBs";
+                }
+                else
+                {
+                    size = size / gb;
+                    lblFileSize.Content = size.ToString("N");
+                    lblDataSize.Content = "GBs";
+                }
+                //else
+                //{
+                //    lblDataSize.Content = $"Error - Something went wrong {fileStats.FileSize}";
+                //}
+                //lblFileSize.Content = size;
+
+            
                 lblFileExtension.Content = fileStats.FileExtension;
+                lblNumberOfFiles.Content = "n/a";
                 
             }
 
@@ -86,6 +130,16 @@ namespace DirFileStats.UserInterface
 
                 // TODO:
                 // Use the dirInfo to create a DirectoryStats object and show the relevant data for the user
+                DirectoryStats directoryStats = StatsCreator.CreateDirectoryStats(dirInfo);
+
+                lblName.Content = directoryStats.Name;
+                lblType.Content = "Directory";
+                lblNumberOfFiles.Content = directoryStats.NumberOfFiles;
+                lblFileSize.Content = "n/a";
+                lblFileExtension.Content = "n/a";
+
+
+
             }
 
 

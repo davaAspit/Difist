@@ -5,16 +5,16 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DirFileStats.UserInterface"
         mc:Ignorable="d"
-        Title="Difist - the only statistic app you will ever need" Height="450" Width="800">
-    <Grid>
+        Title="Difist - the only statistic app you will ever need" Height="475.21" Width="800">
+    <Grid Margin="0,0,0,-21">
         <TextBox x:Name="tbxFilePath" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="194,33,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="509"/>
         <Button x:Name="btnChooseFile" Content="Choose file" HorizontalAlignment="Left" Margin="32,33,0,0" VerticalAlignment="Top" Width="157" Height="23" Click="btnChooseFile_Click"/>
 
         <TextBox x:Name="tbxDirPath" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="194,61,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="509"/>
         <Button x:Name="btnChooseDir" Content="Choose directory" HorizontalAlignment="Left" Margin="32,61,0,0" VerticalAlignment="Top" Width="157" Height="23" Click="btnChooseDir_Click"/>
         
-        <GroupBox Header="The Statistics" HorizontalAlignment="Left" Height="267" Margin="32,119,0,0" VerticalAlignment="Top" Width="509" Foreground="#FF9B9B9B">
-            <Grid>
+        <GroupBox Header="The Statistics" HorizontalAlignment="Left" Height="283" Margin="32,119,0,0" VerticalAlignment="Top" Width="509" Foreground="#FF9B9B9B">
+            <Grid x:Name="tbxCreationTime" Margin="0,0,0,-12">
                 <Label Content="Type:" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top"/>
                 <Label Content="Name:" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top"/>
                 <Label Content="File size:" HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top"/>
@@ -25,6 +25,11 @@
                 <Label x:Name="lblFileSize" Content="n/a" HorizontalAlignment="Left" Margin="173,89,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="lblFileExtension" Content="n/a" HorizontalAlignment="Left" Margin="173,120,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="lblNumberOfFiles" Content="n/a" HorizontalAlignment="Left" Margin="173,151,0,0" VerticalAlignment="Top"/>
+                <Label Content="Creation Time:" HorizontalAlignment="Left" Margin="10,182,0,0" VerticalAlignment="Top"/>
+                <Label Content="Last Modified:" HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblCreationTime" Content="n/a" HorizontalAlignment="Left" Margin="173,182,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblDataSize" Content="" HorizontalAlignment="Left" Margin="220,89,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblLastModified" Content="n/a" HorizontalAlignment="Left" Margin="173,213,0,0" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
         
