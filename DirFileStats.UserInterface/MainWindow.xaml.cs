@@ -15,6 +15,8 @@ using System.Windows.Navigation;
 using System.Windows.Shapes;
 using System.IO;
 using DirFileStats.Business;
+using System.Drawing;
+
 namespace DirFileStats.UserInterface
 {
     /// <summary>
@@ -57,9 +59,6 @@ namespace DirFileStats.UserInterface
                 double size = 0;
                 size = fileStats.FileSize; /// 1024;
 
-                //string lastModified = Convert.ToString(fileStats.LastModified);
-                //string FileCreated = Convert.ToString(fileStats.FileCreated);
-
                 lblCreationTime.Content = fileStats.FileCreated;
                 lblLastModified.Content = fileStats.LastModified;
 
@@ -99,10 +98,8 @@ namespace DirFileStats.UserInterface
             
                 lblFileExtension.Content = fileStats.FileExtension;
                 lblNumberOfFiles.Content = "n/a";
-                
+                imgIcon.Source = BitmapToImageSource(fileStats.GetBitmap());   
             }
-
-
         }
 
         private void btnChooseDir_Click(object sender, RoutedEventArgs e)
@@ -130,13 +127,14 @@ namespace DirFileStats.UserInterface
 
                 // TODO:
                 // Use the dirInfo to create a DirectoryStats object and show the relevant data for the user
-                DirectoryStats directoryStats = StatsCreator.CreateDirectoryStats(dirInfo);
+                DirectoryStats directoryStats = StatsCreator.CreateDirectoryStats(dirInfo, cbxAdvSearch.IsChecked.Value);
 
                 lblName.Content = directoryStats.Name;
                 lblType.Content = "Directory";
                 lblNumberOfFiles.Content = directoryStats.NumberOfFiles;
                 lblFileSize.Content = "n/a";
                 lblFileExtension.Content = "n/a";
+                
 
 
 
@@ -144,5 +142,21 @@ namespace DirFileStats.UserInterface
 
 
         }
+        BitmapImage BitmapToImageSource(Bitmap bitmap)
+        {
+            using (MemoryStream memory = new MemoryStream())
+            {
+                bitmap.Save(memory, System.Drawing.Imaging.ImageFormat.Bmp);
+                memory.Position = 0;
+                BitmapImage bitmapimage = new BitmapImage();
+                bitmapimage.BeginInit();
+                bitmapimage.StreamSource = memory;
+                bitmapimage.CacheOption = BitmapCacheOption.OnLoad;
+                bitmapimage.EndInit();
+
+                return bitmapimage;
+            }
+        }
+
     }
 }
