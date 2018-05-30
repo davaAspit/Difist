@@ -23,15 +23,26 @@ namespace DirFileStats.Business
             return fileStats;
         }
 
-        public static DirectoryStats CreateDirectoryStats(DirectoryInfo directoryInfo, bool checkAllSubFolders= false)
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="directoryInfo"></param>
+        /// <param name="checkAllSubFolders"></param>
+        /// <returns>Returns a DirectoryStats object. IF the parameter directoryInfo is null, null will be returned.</returns>
+        
+        public static DirectoryStats CreateDirectoryStats(DirectoryInfo directoryInfo, bool checkAllSubFolders = false)
         {
+            if (directoryInfo == null)
+            {
+                return null;
+            }
             string directoryName = directoryInfo.Name;
             string directoryPath = directoryInfo.FullName;
             var directoryFiles = directoryInfo.EnumerateFiles();
 
             if (checkAllSubFolders)
             {
-                string[] files = Directory.GetFiles(directoryName, "*", SearchOption.AllDirectories);
+                string[] files = Directory.GetFileSystemEntries(directoryPath, @"*", SearchOption.AllDirectories);
                 int numberOfFiles = files.Count();
                 DirectoryStats allFiles = new DirectoryStats(directoryName, directoryPath, numberOfFiles);
                 return allFiles;
