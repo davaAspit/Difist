@@ -10,7 +10,7 @@ namespace DirFileStats.Business
     {
         private int numberOfFiles;
 
-        public DirectoryStats(string name, int numberOfFiles) : base(name)
+        public DirectoryStats(string name, string path, int numberOfFiles) : base(name, path)
         {
             NumberOfFiles = numberOfFiles;
         }

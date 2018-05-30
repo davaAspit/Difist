@@ -13,29 +13,31 @@ namespace DirFileStats.Business
         {
             string fileExtension = fileInfo.Extension;
             string fileName = fileInfo.Name;
+            string filePath = fileInfo.FullName;
             long fileSize = fileInfo.Length;
 
-            DateTime lastModified = File.GetLastWriteTime(fileName);
-            DateTime fileCreated = File.GetCreationTime(fileName);
+            DateTime lastModified = File.GetLastWriteTime(filePath);
+            DateTime fileCreated = File.GetCreationTime(filePath);
 
-            FileStats fileStats = new FileStats(fileName, fileSize, fileExtension, lastModified, fileCreated);
+            FileStats fileStats = new FileStats(fileName, filePath, fileSize, fileExtension, lastModified, fileCreated);
             return fileStats;
         }
 
         public static DirectoryStats CreateDirectoryStats(DirectoryInfo directoryInfo, bool checkAllSubFolders= false)
         {
             string directoryName = directoryInfo.Name;
+            string directoryPath = directoryInfo.FullName;
             var directoryFiles = directoryInfo.EnumerateFiles();
 
             if (checkAllSubFolders)
             {
                 string[] files = Directory.GetFiles(directoryName, "*", SearchOption.AllDirectories);
                 int numberOfFiles = files.Count();
-                DirectoryStats allFiles = new DirectoryStats(directoryName, numberOfFiles);
+                DirectoryStats allFiles = new DirectoryStats(directoryName, directoryPath, numberOfFiles);
                 return allFiles;
             }
             directoryFiles.Count();
-            DirectoryStats directoryStats = new DirectoryStats(directoryName, directoryFiles.Count());
+            DirectoryStats directoryStats = new DirectoryStats(directoryName, directoryPath, directoryFiles.Count());
             return directoryStats;
         }
     }

@@ -14,7 +14,7 @@ namespace DirFileStats.Business
         private DateTime lastModified;
         private DateTime fileCreated;
 
-        public FileStats(string name, long fileSize, string fileExtension, DateTime lastModified, DateTime fileCreated) : base(name)
+        public FileStats(string name, string path, long fileSize, string fileExtension, DateTime lastModified, DateTime fileCreated) : base(name, path)
         {
             FileSize = fileSize;
             FileExtension = fileExtension;

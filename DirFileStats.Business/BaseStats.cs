@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace DirFileStats.Business
 {
@@ -10,11 +11,23 @@ namespace DirFileStats.Business
     {
         private string name;
 
-        protected BaseStats(string name)
+        private string path;
+
+        protected BaseStats(string name, string path)
         {
+            Path = path;
             Name = name;
         }
 
         public string Name { get => name; set => name = value; }
+        public string Path { get => path; set => path = value; }
+
+        public Bitmap GetBitmap()
+        {
+            Icon fileIcon = Icon.ExtractAssociatedIcon(path);
+            Bitmap bitMap = fileIcon.ToBitmap();
+            return bitMap;
+        }
+
     }
 }
