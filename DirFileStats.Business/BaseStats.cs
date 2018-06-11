@@ -21,13 +21,5 @@ namespace DirFileStats.Business
 
         public string Name { get => name; set => name = value; }
         public string Path { get => path; set => path = value; }
-
-        public Bitmap GetBitmap()
-        {
-            Icon fileIcon = Icon.ExtractAssociatedIcon(path);
-            Bitmap bitMap = fileIcon.ToBitmap();
-            return bitMap;
-        }
-
     }
 }

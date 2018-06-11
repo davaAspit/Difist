@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -21,7 +22,12 @@ namespace DirFileStats.Business
             LastModified = lastModified;
             FileCreated = fileCreated;
         }
-
+        public Bitmap GetBitmap()
+        {
+            Icon fileIcon = Icon.ExtractAssociatedIcon(Path);
+            Bitmap bitMap = fileIcon.ToBitmap();
+            return bitMap;
+        }
         public string FileExtension { get => fileExtension; set => fileExtension = value; }
         public long FileSize { get => fileSize; set => fileSize = value; }
         public DateTime LastModified { get => lastModified; set => lastModified = value; }
