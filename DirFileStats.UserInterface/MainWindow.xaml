@@ -32,8 +32,9 @@
                 <Label x:Name="lblLastModified" Content="n/a" HorizontalAlignment="Left" Margin="173,213,0,0" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
-        <Image x:Name="imgIcon" HorizontalAlignment="Left" Height="122" Margin="577,131,0,0" VerticalAlignment="Top" Width="126" Source="C:\Users\alex5762\Downloads\49116.png"/>
-        <CheckBox x:Name="cbxAdvSearch" Content="" HorizontalAlignment="Left" Margin="10,64,0,0" VerticalAlignment="Top" Height="20"/>
+        <Image x:Name="imgIcon" HorizontalAlignment="Left" Height="122" Margin="577,131,0,0" VerticalAlignment="Top" Width="126" Source="Images\49116.png" />
+        <CheckBox x:Name="cbxAdvSearch" Content="" HorizontalAlignment="Left" Margin="228,94,0,0" VerticalAlignment="Top" Height="25" RenderTransformOrigin="2.162,2.106" Width="25"/>
+        <Label Content="Include Sub-Folder Content:" HorizontalAlignment="Left" Margin="32,89,0,0" VerticalAlignment="Top" Width="196" FontSize="14"/>
 
 
     </Grid>

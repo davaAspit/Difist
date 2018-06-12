@@ -134,8 +134,8 @@ namespace DirFileStats.UserInterface
                 lblNumberOfFiles.Content = directoryStats.NumberOfFiles;
                 lblFileSize.Content = "n/a";
                 lblFileExtension.Content = "n/a";
-                
 
+                
 
 
             }
