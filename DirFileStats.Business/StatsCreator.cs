@@ -16,7 +16,10 @@ namespace DirFileStats.Business
             string filePath = fileInfo.FullName;
             long fileSize = fileInfo.Length;
 
-            FileStats fileStats = new FileStats(fileName, filePath, fileSize, fileExtension);
+            DateTime lastModified = File.GetLastWriteTime(filePath);
+            DateTime fileCreated = File.GetCreationTime(filePath);
+
+            FileStats fileStats = new FileStats(fileName, filePath, fileSize, fileExtension, lastModified, fileCreated);
             return fileStats;
         }
 

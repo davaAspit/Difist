@@ -19,7 +19,7 @@
                 <Label Content="Name:" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top"/>
                 <Label Content="File size:" HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top"/>
                 <Label Content="File extension:" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top"/>
-                <Label Content="Number of files in directory:" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="lblFileCount" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" Height="26" Width="158" Content="Number of files in directory:"/>
                 <Label x:Name="lblType" Content="n/a" HorizontalAlignment="Left" Margin="173,27,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="lblName" Content="n/a" HorizontalAlignment="Left" Margin="173,58,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="lblFileSize" Content="n/a" HorizontalAlignment="Left" Margin="173,89,0,0" VerticalAlignment="Top"/>
@@ -33,8 +33,7 @@
             </Grid>
         </GroupBox>
         <Image x:Name="imgIcon" HorizontalAlignment="Left" Height="122" Margin="577,131,0,0" VerticalAlignment="Top" Width="126" Source="Images\49116.png" />
-        <CheckBox x:Name="cbxAdvSearch" Content="" HorizontalAlignment="Left" Margin="228,94,0,0" VerticalAlignment="Top" Height="25" RenderTransformOrigin="2.162,2.106" Width="25"/>
-        <Label Content="Include Sub-Folder Content:" HorizontalAlignment="Left" Margin="32,89,0,0" VerticalAlignment="Top" Width="196" FontSize="14"/>
+        <CheckBox x:Name="cbxAdvSearch" Content="Include Sub-Folder Content" HorizontalAlignment="Left" Margin="32,94,0,0" VerticalAlignment="Top" Height="25" Width="185" IsEnabled="False" Click="cbxAdvSearch_Click"/>
 
 
     </Grid>
