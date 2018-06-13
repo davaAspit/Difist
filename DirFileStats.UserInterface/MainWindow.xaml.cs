@@ -53,6 +53,7 @@ namespace DirFileStats.UserInterface
                 tbxFilePath.Text = dlg.FileName;
                 FileInfo fileInfo = new FileInfo(dlg.FileName);
                 cbxAdvSearch.IsEnabled = false;
+                cbxModUTC.IsEnabled = true;
 
                 // TODO:
                 // Use the fileInfo to create a FileStats object and show the relevant data for the user
@@ -126,6 +127,7 @@ namespace DirFileStats.UserInterface
                 // Show the path (found in dlg.FileName) in the correct textbox so the user can see what was chosen
                 tbxDirPath.Text = dlg.FileName;
                 cbxAdvSearch.IsEnabled = true;
+                cbxModUTC.IsEnabled = false;
 
                 dirInfo = new DirectoryInfo(dlg.FileName);
 
@@ -136,7 +138,7 @@ namespace DirFileStats.UserInterface
                 lblName.Content = directoryStats.Name;
                 lblType.Content = "Directory";
                 lblNumberOfFiles.Content = directoryStats.NumberOfFiles;
-                lblFileSize.Content = "n/a";
+                lblFileSize.Content = directoryStats.DirectorySize; //This is broken
                 lblFileExtension.Content = "n/a";
             }
 
@@ -164,6 +166,22 @@ namespace DirFileStats.UserInterface
             
             DirectoryStats directoryStats = StatsCreator.CreateDirectoryStats(dirInfo, cbxAdvSearch.IsChecked.Value);
             lblNumberOfFiles.Content = directoryStats.NumberOfFiles;
+        }
+
+        private void cbxModUTC_Click(object sender, RoutedEventArgs e)
+        {
+            FileInfo fileInfo = new FileInfo(tbxFilePath.Text);
+            FileStats directoryStats = StatsCreator.CreateFileStats(fileInfo);
+            if (cbxModUTC.IsChecked == true)
+            {
+                lblLastModified.Content = directoryStats.LastModifiedUTC;
+                lblCreationTime.Content = directoryStats.FileCreatedUTC;
+            }
+            else if(cbxModUTC.IsChecked == false)
+            {
+                lblLastModified.Content = directoryStats.LastModified;
+                lblCreationTime.Content = directoryStats.FileCreated;
+            }
         }
     }
 }
