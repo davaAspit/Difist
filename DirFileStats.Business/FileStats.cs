@@ -14,13 +14,18 @@ namespace DirFileStats.Business
 
         private DateTime lastModified;
         private DateTime fileCreated;
+        
+        private DateTime lastModifiedUTC;
+        private DateTime fileCreatedUTC;
 
-        public FileStats(string name, string path, long fileSize, string fileExtension, DateTime lastModified, DateTime fileCreated) : base(name, path)
+        public FileStats(string name, string path, long fileSize, string fileExtension, DateTime lastModified, DateTime fileCreated, DateTime lastModifiedUTC , DateTime fileCreatedUTC) : base(name, path)
         {
             FileSize = fileSize;
             FileExtension = fileExtension;
             LastModified = lastModified;
             FileCreated = fileCreated;
+            LastModifiedUTC = lastModifiedUTC;
+            FileCreatedUTC = fileCreatedUTC;
         }
         public Bitmap GetBitmap()
         {
@@ -32,5 +37,7 @@ namespace DirFileStats.Business
         public long FileSize { get => fileSize; set => fileSize = value; }
         public DateTime LastModified { get => lastModified; set => lastModified = value; }
         public DateTime FileCreated { get => fileCreated; set => fileCreated = value; }
+        public DateTime LastModifiedUTC { get => lastModifiedUTC; set => lastModifiedUTC = value; }
+        public DateTime FileCreatedUTC { get => fileCreatedUTC; set => fileCreatedUTC = value; }
     }
 }
