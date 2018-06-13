@@ -24,6 +24,8 @@ namespace DirFileStats.UserInterface
     /// </summary>
     public partial class MainWindow : Window
     {
+        private DirectoryInfo dirInfo;
+
         public MainWindow()
         {
             InitializeComponent();
@@ -33,7 +35,7 @@ namespace DirFileStats.UserInterface
         {
             var dlg = new CommonOpenFileDialog()
             {
-                Title = "Vælg en mappe eller fil",
+                Title = "Vælg en fil",
                 IsFolderPicker = false,
                 AddToMostRecentlyUsedList = false,
                 AllowNonFileSystemItems = false,
@@ -50,6 +52,7 @@ namespace DirFileStats.UserInterface
                 // Show the path (found in dlg.FileName) in the correct textbox so the user can see what was chosen
                 tbxFilePath.Text = dlg.FileName;
                 FileInfo fileInfo = new FileInfo(dlg.FileName);
+                cbxAdvSearch.IsEnabled = false;
 
                 // TODO:
                 // Use the fileInfo to create a FileStats object and show the relevant data for the user
@@ -106,7 +109,7 @@ namespace DirFileStats.UserInterface
         {
             var dlg = new CommonOpenFileDialog()
             {
-                Title = "Vælg en mappe eller fil",
+                Title = "Vælg en mappe",
                 IsFolderPicker = true,
                 AddToMostRecentlyUsedList = false,
                 AllowNonFileSystemItems = false,
@@ -122,8 +125,9 @@ namespace DirFileStats.UserInterface
                 // TODO:
                 // Show the path (found in dlg.FileName) in the correct textbox so the user can see what was chosen
                 tbxDirPath.Text = dlg.FileName;
+                cbxAdvSearch.IsEnabled = true;
 
-                DirectoryInfo dirInfo = new DirectoryInfo(dlg.FileName);
+                dirInfo = new DirectoryInfo(dlg.FileName);
 
                 // TODO:
                 // Use the dirInfo to create a DirectoryStats object and show the relevant data for the user
@@ -134,10 +138,6 @@ namespace DirFileStats.UserInterface
                 lblNumberOfFiles.Content = directoryStats.NumberOfFiles;
                 lblFileSize.Content = "n/a";
                 lblFileExtension.Content = "n/a";
-                
-
-
-
             }
 
 
@@ -158,5 +158,12 @@ namespace DirFileStats.UserInterface
             }
         }
 
+        private void cbxAdvSearch_Click(object sender, RoutedEventArgs e)
+        {
+            //    lblFileCount.Content = "Number of folders and files in Directory";
+            
+            DirectoryStats directoryStats = StatsCreator.CreateDirectoryStats(dirInfo, cbxAdvSearch.IsChecked.Value);
+            lblNumberOfFiles.Content = directoryStats.NumberOfFiles;
+        }
     }
 }
