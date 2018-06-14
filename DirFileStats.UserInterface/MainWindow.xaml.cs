@@ -137,7 +137,7 @@ namespace DirFileStats.UserInterface
                 CalculateSize(directoryStats.DirectorySize); //TODO: Needs to be fixed
 
                 lblFileExtension.Content = "n/a";
-                imgIcon.Source = new BitmapImage(new Uri("Images/68494.png", UriKind.Relative));
+                imgIcon.Source = new BitmapImage(new Uri("Images/folder.png", UriKind.Relative));
             }
 
 

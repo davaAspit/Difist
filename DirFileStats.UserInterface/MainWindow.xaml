@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DirFileStats.UserInterface"
         mc:Ignorable="d"
-        Title="Difist - the only statistic app you will ever need" Height="475.21" Width="804.134" ResizeMode="NoResize" Icon="Images/49116.png">
+        Title="Difist - the only statistic app you will ever need" Height="475.21" Width="804.134" ResizeMode="NoResize" Icon="Images/magGlass.png">
     <Grid Margin="0,0,0,1">
         <TextBox x:Name="tbxFilePath" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="194,33,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="509"/>
         <Button x:Name="btnChooseFile" Content="Choose file" HorizontalAlignment="Left" Margin="32,33,0,0" VerticalAlignment="Top" Width="157" Height="23" Click="btnChooseFile_Click"/>
@@ -13,7 +13,7 @@
         <TextBox x:Name="tbxDirPath" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="194,61,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="509"/>
         <Button x:Name="btnChooseDir" Content="Choose directory" HorizontalAlignment="Left" Margin="32,61,0,0" VerticalAlignment="Top" Width="157" Height="23" Click="btnChooseDir_Click"/>
 
-        <GroupBox Header="The Statistics" HorizontalAlignment="Left" Height="283" Margin="32,119,0,0" VerticalAlignment="Top" Width="509" Foreground="#FF9B9B9B">
+        <GroupBox Header="The Statistics" HorizontalAlignment="Left" Height="283" Margin="32,119,0,0" VerticalAlignment="Top" Width="509" Foreground="Black" Background="White">
             <Grid x:Name="tbxCreationTime" Margin="0,0,0,-12">
                 <Label Content="Type:" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" ToolTip="The type which is selected, e.g. file, directory"/>
                 <Label Content="Name:" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" ToolTip="The name of the selected directory or file"/>
@@ -32,9 +32,13 @@
                 <Label x:Name="lblLastModified" Content="n/a" HorizontalAlignment="Left" Margin="173,213,0,0" VerticalAlignment="Top"/>
             </Grid>
         </GroupBox>
-        <Image x:Name="imgIcon" HorizontalAlignment="Left" Height="122" Margin="577,131,0,0" VerticalAlignment="Top" Width="126" Source="Images\49116.png" />
+        <Image x:Name="imgIcon" HorizontalAlignment="Left" Height="122" Margin="577,131,0,0" VerticalAlignment="Top" Width="126" Source="Images\magGlass.png" />
         <CheckBox x:Name="cbxAdvSearch" Content="Include Sub-Folder Content" HorizontalAlignment="Left" Margin="32,94,0,0" VerticalAlignment="Top" Height="25" Width="185" IsEnabled="False" Click="cbxAdvSearch_Click"/>
         <CheckBox x:Name="cbxModUTC" Content="Modified time as UTC" HorizontalAlignment="Left" Margin="222,94,0,0" VerticalAlignment="Top" IsEnabled="False" Click="cbxModUTC_Click"/>
+        <Image Margin="565,-209,-241,224" Source="Images\coaster.png" Stretch="Fill" Panel.ZIndex="-1"/>
+        <Image Margin="565,221,-241,-206" Source="Images\coaster.png" Stretch="Fill" Panel.ZIndex="-1"/>
+        <Image Margin="-238,221,562,-206" Source="Images\coaster.png" Stretch="Fill" Panel.ZIndex="-1"/>
+        <Image Margin="-238,-214,562,229" Source="Images\coaster.png" Stretch="Fill" Panel.ZIndex="-1" RenderTransformOrigin="0.428,0.595"/>
 
 
     </Grid>
