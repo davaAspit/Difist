@@ -140,6 +140,7 @@ namespace DirFileStats.UserInterface
                 lblNumberOfFiles.Content = directoryStats.NumberOfFiles;
                 lblFileSize.Content = directoryStats.DirectorySize; //This is broken
                 lblFileExtension.Content = "n/a";
+                imgIcon.Source = new BitmapImage(new Uri("Images/68494.png", UriKind.Relative));
             }
 
 

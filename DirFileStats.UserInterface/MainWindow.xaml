@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DirFileStats.UserInterface"
         mc:Ignorable="d"
-        Title="Difist - the only statistic app you will ever need" Height="475.21" Width="804.134" ResizeMode="NoResize">
+        Title="Difist - the only statistic app you will ever need" Height="475.21" Width="804.134" ResizeMode="NoResize" Icon="Images/49116.png">
     <Grid Margin="0,0,0,1">
         <TextBox x:Name="tbxFilePath" IsReadOnly="True" HorizontalAlignment="Left" Height="23" Margin="194,33,0,0" TextWrapping="NoWrap" VerticalAlignment="Top" Width="509"/>
         <Button x:Name="btnChooseFile" Content="Choose file" HorizontalAlignment="Left" Margin="32,33,0,0" VerticalAlignment="Top" Width="157" Height="23" Click="btnChooseFile_Click"/>
