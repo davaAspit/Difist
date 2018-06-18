@@ -139,8 +139,6 @@ namespace DirFileStats.UserInterface
                 lblFileExtension.Content = "n/a";
                 imgIcon.Source = new BitmapImage(new Uri("Images/folder.png", UriKind.Relative));
             }
-
-
         }
         BitmapImage BitmapToImageSource(Bitmap bitmap)
         {
@@ -160,7 +158,7 @@ namespace DirFileStats.UserInterface
 
         private void cbxAdvSearch_Click(object sender, RoutedEventArgs e)
         {
-            //    lblFileCount.Content = "Number of folders and files in Directory";
+            //lblFileCount.Content = "Number of folders and files in Directory";
             
             DirectoryStats directoryStats = StatsCreator.CreateDirectoryStats(dirInfo, cbxAdvSearch.IsChecked.Value);
             lblNumberOfFiles.Content = directoryStats.NumberOfFiles;
