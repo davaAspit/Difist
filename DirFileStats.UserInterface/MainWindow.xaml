@@ -18,7 +18,7 @@
                 <Label Content="Type:" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" ToolTip="The type which is selected, e.g. file, directory"/>
                 <Label Content="Name:" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" ToolTip="The name of the selected directory or file"/>
                 <Label Content="File size:" HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top" ToolTip="The size of the currently selected files, doesn't work with directories"/>
-                <Label Content="File extension:" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" ToolTip="Displays the extension of the current selected file"/>
+                <Label x:Name="lblfileExtension" Content="File extension:" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" ToolTip="Displays the extension of the current selected file"/>
                 <Label x:Name="lblFileCount" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" Height="26" Width="158" Content="Number of files in directory:" ToolTip="Only works if a directory is selected"/>
                 <Label x:Name="lblType" Content="n/a" HorizontalAlignment="Left" Margin="173,27,0,0" VerticalAlignment="Top"/>
                 <Label x:Name="lblName" Content="n/a" HorizontalAlignment="Left" Margin="173,58,0,0" VerticalAlignment="Top"/>

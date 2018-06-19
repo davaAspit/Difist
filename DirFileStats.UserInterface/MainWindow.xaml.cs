@@ -101,7 +101,13 @@ namespace DirFileStats.UserInterface
 
             
                 lblFileExtension.Content = fileStats.FileExtension;
-                lblNumberOfFiles.Content = "n/a";
+
+                lblNumberOfFiles.IsEnabled = false;
+                lblFileCount.IsEnabled = false;
+                lblFileExtension.IsEnabled = true;
+                lblfileExtension.IsEnabled = true;
+                cbxAdvSearch.IsChecked = false;
+
                 imgIcon.Source = BitmapToImageSource(fileStats.GetBitmap());   
             }
         }
@@ -141,6 +147,15 @@ namespace DirFileStats.UserInterface
                 lblFileSize.Content = directoryStats.DirectorySize; //This is broken
                 lblFileExtension.Content = "n/a";
                 imgIcon.Source = new BitmapImage(new Uri("Images/folder.png", UriKind.Relative));
+                lblNumberOfFiles.IsEnabled = true;
+                lblFileCount.IsEnabled = true;
+                lblFileExtension.IsEnabled = false;
+                lblfileExtension.IsEnabled = false;
+                lblCreationTime.Content = "n/a";
+                lblLastModified.Content = "n/a";
+                lblLastModified.IsEnabled = false;
+                lblCreationTime.IsEnabled = false;
+
             }
 
 
