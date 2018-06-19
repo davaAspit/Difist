@@ -14,23 +14,43 @@
         <Button x:Name="btnChooseDir" Content="Choose directory" HorizontalAlignment="Left" Margin="32,61,0,0" VerticalAlignment="Top" Width="157" Height="23" Click="btnChooseDir_Click"/>
 
         <GroupBox Header="The Statistics" HorizontalAlignment="Left" Height="283" Margin="32,119,0,0" VerticalAlignment="Top" Width="509" Foreground="Black" Background="White">
-            <Grid x:Name="tbxCreationTime" Margin="0,0,0,-12">
-                <Label Content="Type:" HorizontalAlignment="Left" Margin="10,27,0,0" VerticalAlignment="Top" ToolTip="The type which is selected, e.g. file, directory"/>
-                <Label Content="Name:" HorizontalAlignment="Left" Margin="10,58,0,0" VerticalAlignment="Top" ToolTip="The name of the selected directory or file"/>
-                <Label Content="File size:" HorizontalAlignment="Left" Margin="10,89,0,0" VerticalAlignment="Top" ToolTip="The size of the currently selected files, doesn't work with directories"/>
-                <Label x:Name="lblfileExtension" Content="File extension:" HorizontalAlignment="Left" Margin="10,120,0,0" VerticalAlignment="Top" ToolTip="Displays the extension of the current selected file"/>
-                <Label x:Name="lblFileCount" HorizontalAlignment="Left" Margin="10,151,0,0" VerticalAlignment="Top" Height="26" Width="158" Content="Number of files in directory:" ToolTip="Only works if a directory is selected"/>
-                <Label x:Name="lblType" Content="n/a" HorizontalAlignment="Left" Margin="173,27,0,0" VerticalAlignment="Top"/>
-                <Label x:Name="lblName" Content="n/a" HorizontalAlignment="Left" Margin="173,58,0,0" VerticalAlignment="Top"/>
-                <Label x:Name="lblFileSize" Content="n/a" HorizontalAlignment="Left" Margin="173,89,0,0" VerticalAlignment="Top"/>
-                <Label x:Name="lblFileExtension" Content="n/a" HorizontalAlignment="Left" Margin="173,120,0,0" VerticalAlignment="Top"/>
-                <Label x:Name="lblNumberOfFiles" Content="n/a" HorizontalAlignment="Left" Margin="173,151,0,0" VerticalAlignment="Top"/>
-                <Label Content="Creation Time:" HorizontalAlignment="Left" Margin="10,182,0,0" VerticalAlignment="Top" ToolTip="Creation time for the current selected file; can be changed to UTC"/>
-                <Label Content="Last Modified:" HorizontalAlignment="Left" Margin="10,213,0,0" VerticalAlignment="Top" ToolTip="Last modified time for the current selected file; can be changed to UTC"/>
-                <Label x:Name="lblCreationTime" Content="n/a" HorizontalAlignment="Left" Margin="173,182,0,0" VerticalAlignment="Top"/>
-                <Label x:Name="lblDataSize" Content="" HorizontalAlignment="Left" Margin="220,89,0,0" VerticalAlignment="Top"/>
-                <Label x:Name="lblLastModified" Content="n/a" HorizontalAlignment="Left" Margin="173,213,0,0" VerticalAlignment="Top"/>
-            </Grid>
+            <StackPanel>
+                <WrapPanel x:Name="wpName">
+                    <Label Content="Name:" ToolTip="The name of the selected directory or file"/>
+                    <Label x:Name="lblName" Content="n/a" />
+                </WrapPanel>
+                
+                <WrapPanel x:Name="wpType">
+                    <Label Content="Type:" ToolTip="The type which is selected, e.g. file, directory"/>
+                    <Label x:Name="lblType" Content="n/a"/>
+                </WrapPanel>
+                
+                <WrapPanel x:Name="wpFileSize">
+                    <Label Content="File size:" ToolTip="The size of the currently selected files, doesn't work with directories"/>
+                    <Label x:Name="lblFileSize" Content="n/a" />
+                    <Label x:Name="lblDataSize" Content="" />
+                </WrapPanel>
+
+                <WrapPanel x:Name="wpFileExtension">
+                    <Label Content="File extension:" ToolTip="Displays the extension of the current selected file"/>
+                    <Label x:Name="lblFileExtension" Content="n/a" />
+                </WrapPanel>
+
+                <WrapPanel x:Name="wpFileCount">
+                    <Label x:Name="lblFileCount" Content="Number of files in directory:" ToolTip="Only works if a directory is selected"/>
+                    <Label x:Name="lblNumberOfFiles" Content="n/a" />
+                </WrapPanel>
+
+                <WrapPanel x:Name="wpCreationTime">
+                    <Label Content="Creation Time:" ToolTip="Creation time for the current selected file; can be changed to UTC"/>
+                    <Label x:Name="lblCreationTime" Content="n/a" />
+                </WrapPanel>
+
+                <WrapPanel x:Name="wpLastModified">
+                    <Label Content="Last Modified:"  ToolTip="Last modified time for the current selected file; can be changed to UTC"/>
+                    <Label x:Name="lblLastModified" Content="n/a" />
+                </WrapPanel>
+            </StackPanel>
         </GroupBox>
         <Image x:Name="imgIcon" HorizontalAlignment="Left" Height="122" Margin="577,131,0,0" VerticalAlignment="Top" Width="126" Source="Images\magGlass.png" />
         <CheckBox x:Name="cbxAdvSearch" Content="Include Sub-Folder Content" HorizontalAlignment="Left" Margin="32,94,0,0" VerticalAlignment="Top" Height="25" Width="185" IsEnabled="False" Click="cbxAdvSearch_Click"/>
@@ -38,7 +58,7 @@
         <Image Margin="565,-209,-241,224" Source="Images\coaster.png" Stretch="Fill" Panel.ZIndex="-1"/>
         <Image Margin="565,221,-241,-206" Source="Images\coaster.png" Stretch="Fill" Panel.ZIndex="-1"/>
         <Image Margin="-238,221,562,-206" Source="Images\coaster.png" Stretch="Fill" Panel.ZIndex="-1"/>
-        <Image Margin="-238,-214,562,229" Source="Images\coaster.png" Stretch="Fill" Panel.ZIndex="-1" RenderTransformOrigin="0.428,0.595"/>
+        <Image Margin="-238,-214,562,229" Source="Images\coaster.png" Stretch="Fill" Panel.ZIndex="-1"/>
 
 
     </Grid>
