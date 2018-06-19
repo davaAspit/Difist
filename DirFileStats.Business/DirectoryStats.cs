@@ -11,7 +11,7 @@ namespace DirFileStats.Business
         private int numberOfFiles;
         private long directorySize;
 
-        public DirectoryStats(string name, string path, int numberOfFiles, long directroySize) : base(name, path)
+        public DirectoryStats(string name, string path, int numberOfFiles, long directorySize) : base(name, path)
         {
             DirectorySize = directorySize;
             NumberOfFiles = numberOfFiles;

@@ -60,46 +60,12 @@ namespace DirFileStats.UserInterface
                 FileStats fileStats = StatsCreator.CreateFileStats(fileInfo);
                 lblName.Content = fileStats.Name;
                 lblType.Content = "File";
-                double size = 0;
-                size = fileStats.FileSize; /// 1024;
+
+                CalculateSize(fileStats.FileSize);
 
                 lblCreationTime.Content = fileStats.FileCreated;
                 lblLastModified.Content = fileStats.LastModified;
-
-                const long kb = 1024;
-                const long mb = 1048576;
-                const long gb = 1073741824;
-
-                if (size < kb)
-                {
-                    lblFileSize.Content = size;
-                    lblDataSize.Content = "Byte";
-                }
-                else if (size < mb)
-                {
-                    size = size / kb;
-                     lblFileSize.Content = size.ToString("N2");
-                    lblDataSize.Content = "KBs";
-                }
-                else if (size < gb)
-                {
-                    size = size / mb;
-                    lblFileSize.Content = size.ToString("N");
-                    lblDataSize.Content = "MBs";
-                }
-                else
-                {
-                    size = size / gb;
-                    lblFileSize.Content = size.ToString("N");
-                    lblDataSize.Content = "GBs";
-                }
-                //else
-                //{
-                //    lblDataSize.Content = $"Error - Something went wrong {fileStats.FileSize}";
-                //}
-                //lblFileSize.Content = size;
-
-            
+                
                 lblFileExtension.Content = fileStats.FileExtension;
 
                 lblNumberOfFiles.IsEnabled = false;
@@ -111,7 +77,37 @@ namespace DirFileStats.UserInterface
                 imgIcon.Source = BitmapToImageSource(fileStats.GetBitmap());   
             }
         }
+        private double CalculateSize(double size)
+        {
+            const long kb = 1024;
+            const long mb = 1048576;
+            const long gb = 1073741824;
 
+            if (size < kb)
+            {
+                lblFileSize.Content = size;
+                lblDataSize.Content = "Byte";
+            }
+            else if (size < mb)
+            {
+                size = size / kb;
+                lblFileSize.Content = size.ToString("N2");
+                lblDataSize.Content = "KBs";
+            }
+            else if (size < gb)
+            {
+                size = size / mb;
+                lblFileSize.Content = size.ToString("N");
+                lblDataSize.Content = "MBs";
+            }
+            else
+            {
+                size = size / gb;
+                lblFileSize.Content = size.ToString("N");
+                lblDataSize.Content = "GBs";
+            }
+            return size;
+        }
         private void btnChooseDir_Click(object sender, RoutedEventArgs e)
         {
             var dlg = new CommonOpenFileDialog()
@@ -143,8 +139,9 @@ namespace DirFileStats.UserInterface
 
                 lblName.Content = directoryStats.Name;
                 lblType.Content = "Directory";
-                lblNumberOfFiles.Content = directoryStats.NumberOfFiles;
-                lblFileSize.Content = directoryStats.DirectorySize; //This is broken
+
+                CalculateSize(directoryStats.DirectorySize); //TODO: Needs to be fixed
+
                 lblFileExtension.Content = "n/a";
                 imgIcon.Source = new BitmapImage(new Uri("Images/folder.png", UriKind.Relative));
                 lblNumberOfFiles.IsEnabled = true;
