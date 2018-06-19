@@ -71,7 +71,6 @@ namespace DirFileStats.UserInterface
                 lblNumberOfFiles.IsEnabled = false;
                 lblFileCount.IsEnabled = false;
                 lblFileExtension.IsEnabled = true;
-                lblfileExtension.IsEnabled = true;
                 cbxAdvSearch.IsChecked = false;
 
                 imgIcon.Source = BitmapToImageSource(fileStats.GetBitmap());   
@@ -147,7 +146,6 @@ namespace DirFileStats.UserInterface
                 lblNumberOfFiles.IsEnabled = true;
                 lblFileCount.IsEnabled = true;
                 lblFileExtension.IsEnabled = false;
-                lblfileExtension.IsEnabled = false;
                 lblCreationTime.Content = "n/a";
                 lblLastModified.Content = "n/a";
                 lblLastModified.IsEnabled = false;
@@ -194,6 +192,12 @@ namespace DirFileStats.UserInterface
                 lblLastModified.Content = directoryStats.LastModified;
                 lblCreationTime.Content = directoryStats.FileCreated;
             }
+        }
+
+        private void btnOptions_Click(object sender, RoutedEventArgs e)
+        {
+            Options optionWindow = new Options();
+            optionWindow.Show();
         }
     }
 }
