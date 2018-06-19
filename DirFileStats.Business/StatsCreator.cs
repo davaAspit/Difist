@@ -44,12 +44,8 @@ namespace DirFileStats.Business
             var directoryFiles = directoryInfo.EnumerateFiles();
 
             long directorySize = 0;
-            foreach (FileInfo fileInfo in directoryFiles)
-            {
-                directorySize += fileInfo.Length;
-            }
-
-            if (checkAllSubFolders == true)
+            
+            if(checkAllSubFolders == true)
             {
                 string[] filesAndDirectories = Directory.GetFileSystemEntries(directoryPath, @"*", SearchOption.AllDirectories);
                 int numberOfFiles = filesAndDirectories.Count();
@@ -61,9 +57,16 @@ namespace DirFileStats.Business
                 DirectoryStats allFiles = new DirectoryStats(directoryName, directoryPath, numberOfFiles, directorySize);
                 return allFiles;
             }
-            directoryFiles.Count();
-            DirectoryStats directoryStats = new DirectoryStats(directoryName, directoryPath, directoryFiles.Count(), directorySize);
-            return directoryStats;
+            else
+            {
+                foreach (FileInfo fileInfo in directoryFiles)
+                {
+                    directorySize += fileInfo.Length;
+                }
+                directoryFiles.Count();
+                DirectoryStats directoryStats = new DirectoryStats(directoryName, directoryPath, directoryFiles.Count(), directorySize);
+                return directoryStats;
+            }
         }
         private static (long fileSize, int errors) GetSizeOfFiles(string[] files)
         {

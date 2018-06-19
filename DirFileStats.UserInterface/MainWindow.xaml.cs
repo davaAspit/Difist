@@ -161,6 +161,7 @@ namespace DirFileStats.UserInterface
             //lblFileCount.Content = "Number of folders and files in Directory";
             
             DirectoryStats directoryStats = StatsCreator.CreateDirectoryStats(dirInfo, cbxAdvSearch.IsChecked.Value);
+            CalculateSize(directoryStats.DirectorySize);
             lblNumberOfFiles.Content = directoryStats.NumberOfFiles;
         }
 
