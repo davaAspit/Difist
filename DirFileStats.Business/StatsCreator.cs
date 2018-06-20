@@ -50,10 +50,8 @@ namespace DirFileStats.Business
                 string[] filesAndDirectories = Directory.GetFileSystemEntries(directoryPath, @"*", SearchOption.AllDirectories);
                 int numberOfFiles = filesAndDirectories.Count();
                 var files = RemoveDirectoriesFrom(filesAndDirectories);
-
-                (long fileSize, int errors) = GetSizeOfFiles(files); //Needs to be fixed
+                (long fileSize, int errors) = GetSizeOfFiles(files);
                 directorySize += fileSize;
-
                 DirectoryStats allFiles = new DirectoryStats(directoryName, directoryPath, numberOfFiles, directorySize);
                 return allFiles;
             }
