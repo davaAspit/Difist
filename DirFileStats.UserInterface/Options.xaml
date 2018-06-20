@@ -5,12 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DirFileStats.UserInterface"
         mc:Ignorable="d"
-        Title="Options" Height="450" Width="800">
+        Title="Options" Height="483.399" Width="597.25">
     <Grid>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="71*"/>
-            <ColumnDefinition/>
+            <ColumnDefinition Width="240*"/>
+            <ColumnDefinition Width="342*"/>
+            <ColumnDefinition Width="7*"/>
         </Grid.ColumnDefinitions>
+        <GroupBox Header="Settings" HorizontalAlignment="Left" Height="432" Margin="10,10,0,0" VerticalAlignment="Top" Width="220">
+            <StackPanel HorizontalAlignment="Left" Height="399" VerticalAlignment="Top" Width="210" Margin="0,10,-2,0">
+                <Label x:Name="lblChangeBg" Content="Change background / layout" Height="50" Margin="10,0"/>
+                <Label x:Name="lblTimeZone" Content="Change timezone" Margin="10,0" Height="50"/>
+            </StackPanel>
+        </GroupBox>
 
     </Grid>
 </Window>

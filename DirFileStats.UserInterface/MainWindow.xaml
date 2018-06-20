@@ -59,6 +59,7 @@
         <Image Margin="565,221,-241,-206" Source="Images\coaster.png" Stretch="Fill" Panel.ZIndex="-1"/>
         <Image Margin="-238,221,562,-206" Source="Images\coaster.png" Stretch="Fill" Panel.ZIndex="-1"/>
         <Image Margin="-238,-214,562,229" Source="Images\coaster.png" Stretch="Fill" Panel.ZIndex="-1"/>
+        <Button x:Name="btnOptions" Content="Options" HorizontalAlignment="Left" Margin="546,382,0,0" VerticalAlignment="Top" Width="242" Click="btnOptions_Click"/>
 
 
     </Grid>

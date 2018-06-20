@@ -194,5 +194,11 @@ namespace DirFileStats.UserInterface
                 lblCreationTime.Content = directoryStats.FileCreated;
             }
         }
+
+        private void btnOptions_Click(object sender, RoutedEventArgs e)
+        {
+            Options optionsWindow = new Options();
+            optionsWindow.Show();
+        }
     }
 }
