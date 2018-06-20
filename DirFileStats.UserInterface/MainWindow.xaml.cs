@@ -68,10 +68,13 @@ namespace DirFileStats.UserInterface
                 
                 lblFileExtension.Content = fileStats.FileExtension;
 
-                lblNumberOfFiles.IsEnabled = false;
-                lblFileCount.IsEnabled = false;
-                lblFileExtension.IsEnabled = true;
+
+                wpFileCount.Visibility = Visibility.Collapsed;
+                wpFileExtension.Visibility = Visibility.Visible;
                 cbxAdvSearch.IsChecked = false;
+                wpLastModified.Visibility = Visibility.Visible;
+                wpCreationTime.Visibility = Visibility.Visible;
+                
 
                 imgIcon.Source = BitmapToImageSource(fileStats.GetBitmap());   
             }
@@ -143,13 +146,11 @@ namespace DirFileStats.UserInterface
 
                 lblFileExtension.Content = "n/a";
                 imgIcon.Source = new BitmapImage(new Uri("Images/folder.png", UriKind.Relative));
-                lblNumberOfFiles.IsEnabled = true;
-                lblFileCount.IsEnabled = true;
-                lblFileExtension.IsEnabled = false;
-                lblCreationTime.Content = "n/a";
-                lblLastModified.Content = "n/a";
-                lblLastModified.IsEnabled = false;
-                lblCreationTime.IsEnabled = false;
+                wpFileCount.Visibility = Visibility.Visible;
+                wpFileExtension.Visibility = Visibility.Collapsed;
+                wpCreationTime.Visibility = Visibility.Collapsed;
+                wpLastModified.Visibility = Visibility.Collapsed;
+                cbxModUTC.IsChecked = false;
 
             }
         }
@@ -192,12 +193,6 @@ namespace DirFileStats.UserInterface
                 lblLastModified.Content = directoryStats.LastModified;
                 lblCreationTime.Content = directoryStats.FileCreated;
             }
-        }
-
-        private void btnOptions_Click(object sender, RoutedEventArgs e)
-        {
-            Options optionWindow = new Options();
-            optionWindow.Show();
         }
     }
 }
