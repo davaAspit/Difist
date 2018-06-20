@@ -16,38 +16,38 @@
         <GroupBox Header="The Statistics" HorizontalAlignment="Left" Height="283" Margin="32,119,0,0" VerticalAlignment="Top" Width="509" Foreground="Black" Background="White">
             <StackPanel>
                 <WrapPanel x:Name="wpName">
-                    <Label Content="Name:" ToolTip="The name of the selected directory or file"/>
+                    <Label Content="Name:" ToolTip="The name of the selected directory or file" Width="165"/>
                     <Label x:Name="lblName" Content="n/a" />
                 </WrapPanel>
-                
+
                 <WrapPanel x:Name="wpType">
-                    <Label Content="Type:" ToolTip="The type which is selected, e.g. file, directory"/>
+                    <Label Content="Type:" ToolTip="The type which is selected, e.g. file, directory" Width="165"/>
                     <Label x:Name="lblType" Content="n/a"/>
                 </WrapPanel>
-                
+
                 <WrapPanel x:Name="wpFileSize">
-                    <Label Content="File size:" ToolTip="The size of the currently selected files, doesn't work with directories"/>
+                    <Label Content="File size:" ToolTip="The size of the currently selected files, doesn't work with directories" Width="165"/>
                     <Label x:Name="lblFileSize" Content="n/a" />
                     <Label x:Name="lblDataSize" Content="" />
                 </WrapPanel>
 
                 <WrapPanel x:Name="wpFileExtension">
-                    <Label Content="File extension:" ToolTip="Displays the extension of the current selected file"/>
+                    <Label Content="File extension:" ToolTip="Displays the extension of the current selected file" Width="165"/>
                     <Label x:Name="lblFileExtension" Content="n/a" />
                 </WrapPanel>
 
                 <WrapPanel x:Name="wpFileCount">
-                    <Label x:Name="lblFileCount" Content="Number of files in directory:" ToolTip="Only works if a directory is selected"/>
+                    <Label x:Name="lblFileCount" Content="Number of files in directory:" ToolTip="Only works if a directory is selected" Width="165"/>
                     <Label x:Name="lblNumberOfFiles" Content="n/a" />
                 </WrapPanel>
 
                 <WrapPanel x:Name="wpCreationTime">
-                    <Label Content="Creation Time:" ToolTip="Creation time for the current selected file; can be changed to UTC"/>
+                    <Label Content="Creation Time:" ToolTip="Creation time for the current selected file; can be changed to UTC" Width="165"/>
                     <Label x:Name="lblCreationTime" Content="n/a" />
                 </WrapPanel>
 
                 <WrapPanel x:Name="wpLastModified">
-                    <Label Content="Last Modified:"  ToolTip="Last modified time for the current selected file; can be changed to UTC"/>
+                    <Label Content="Last Modified:"  ToolTip="Last modified time for the current selected file; can be changed to UTC" Width="165"/>
                     <Label x:Name="lblLastModified" Content="n/a" />
                 </WrapPanel>
             </StackPanel>
